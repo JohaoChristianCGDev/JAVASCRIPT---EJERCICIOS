@@ -12,6 +12,11 @@
 
 const interationMaster = (integer) => {
   // Escribe tu código aquí
+  const arregloFinal = []
+  for (let i = 1; i <= integer; i++) {
+    arregloFinal.push(i)
+  }
+  return arregloFinal
 }
 
 export default interationMaster

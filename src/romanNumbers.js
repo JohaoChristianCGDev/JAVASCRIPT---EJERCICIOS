@@ -15,7 +15,27 @@
 // debemos comprar un valor dentro de un for, con el siguiente
 // sort, reduce
 const romanNumbers = (roman) => {
-
+  const dic = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  }
+  const splitRoman = roman.split('')
+  let counter = 0
+  for (let i = 0; i < splitRoman.length; i++) {
+    const current = dic[splitRoman[i]]
+    const next = dic[splitRoman[i + 1]]
+    if (current < next) {
+      counter = counter - current
+    } else {
+      counter = counter + current
+    }
+  }
+  return counter
 }
 
 export default romanNumbers

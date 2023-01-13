@@ -13,9 +13,20 @@
  *
  */
 
-const leyOhm = ({ V, R, I }) => {
+const leyOhm = ({ V = 0, R = 0, I = 0 }) => {
   // Escribe tu código aquí
-
+  if (R === 0) {
+    const resistencia = V / I
+    return `La resistencia es de ${resistencia.toFixed(2)}`
+  } else if (V === 0) {
+    const voltaje = R * I
+    return `El voltaje es de ${voltaje.toFixed(2)}`
+  } else if (I === 0) {
+    const corriente = V / R
+    return `La corriente es de ${corriente.toFixed(2)}`
+  } else {
+    return 'Invalid values'
+  }
 }
 
 export default leyOhm
